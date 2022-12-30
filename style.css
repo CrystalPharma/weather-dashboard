@@ -1,0 +1,12 @@
+body, footer {
+    background-image: linear-gradient(to top,
+            #BF8D7A 0%,
+            #8090A6 100%) !important;
+    background-repeat: no-repeat;
+    height: 100%;
+    
+}
+
+.jumbotron, .card{
+    background-color: transparent;
+}

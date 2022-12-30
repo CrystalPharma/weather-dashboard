@@ -23,46 +23,65 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4 text-center"><i class="wi wi-moon-alt-waning-crescent-5"></i><b>Weather Dashboard</b></h1>
+            <h1 class="display-4 text-center"><b>Weather Dashboard</b></h1>
         </div>
     </div>
-    <div class="card">
-        <div class="card-body" id="card-body">
-            <h2>Search Parameters</h2>   
-        </div>
-        <div>
-            <div class="card-body" id="card-body">
-                <div class="input-group">
-                    <div class="form-outline">
-                      <input type="search" id="form1" class="form-control" />
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center px-10">
+            <div class="card" style="width: 48rem">
+                <div class="card text">
+                    <div class="card-header">
+                        <div class="input-group rounded" style="width: 20rem;">
+                            <input type="search" class="form-control rounded" placeholder="City" aria-label="Search"
+                                aria-describedby="search-addon" />
+                            <span class="input-group-text" id="search-addon">
+                                <a><i class="fas fa-search"></i></a>
+                            </span>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-primary">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-            </div>
-        </div>
-
-        <div class="card" style="width: 50 rem">
-            <div class="card-body" id="card-body">
-                <h2><i class="fas fa-pen"></i> Top Articles</h2>
-                <br>
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <p class="lead"></p>
+                    <h3 class="ml-auto mr-4 mt-3 mb-0" id="city">Toronto</h3>
+                    <p class="ml-auto mr-4 mb-0 med-font" id="weather-description">Snow</p>
+                    <h1 class="ml-auto mr-4 large-font" id="temperature">-20&#176;</h1>
+                    <p class="ml-auto mr-4 mb-0 med-font" id="max/min">1/-20</p>
+                    <h1 class="ml-4 display-4" id="weather-icon"><i class="wi wi-snowflake-cold"></i></h1>
+                    <p class="time-font mb-0 ml-4 mt-auto" id="current-time">08:30 <span class="sm-font">AM</span></p>
+                    <p class="ml-4 mb-4" id="current-date">Wednesday, 18 October 2019</p>
+                    <p class="time-font mb-0 ml-4 mt-auto" id="wind-speed"><i class="wi wi-strong-wind"></i></p>
+                    <p class="time-font mb-0 ml-4 mt-auto" id="current-time"><i class="wi wi-raindrop"></i></p>
+                    <div class="divider table mx-2 text-center bg-transparent whitespace-nowrap"><span
+                            class="inline-block px-3">Forecast</span></div>
+                    <div class="px-6 py-6 relative">
+                        <div class="text-center justify-between items-center flex"
+                            style="display: flex; justify-content: center; ">
+                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span
+                                    class="block my-1">Sun</span><img src="https://i.imgur.com/ffgW9JQ.png"
+                                    class="block w-8 h-8"><span class="block my-1">38.3&deg;</span></div>
+                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span
+                                    class="block my-1">Mon</span><img src="https://i.imgur.com/BQbzoKt.png"
+                                    class="block w-8 h-8"><span class="block my-1">39.9&deg;</span></div>
+                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span
+                                    class="block my-1">Tue</span><img src="https://i.imgur.com/BQbzoKt.png"
+                                    class="block w-8 h-8"><span class="block my-1">40.1&deg;</span></div>
+                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span
+                                    class="block my-1">Wed</span><img src="https://i.imgur.com/ffgW9JQ.png"
+                                    class="block w-8 h-8"><span class="block my-1">41.5&deg;</span></div>
+                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span
+                                    class="block my-1">Thurs</span><img src="https://i.imgur.com/ffgW9JQ.png"
+                                    class="block w-8 h-8"><span class="block my-1">40.1&deg;</span></div>
+                            <div class="text-center mb-0 flex items-center justify-center flex-col"><span
+                                    class="block my-1">Fri</span><img src="https://i.imgur.com/BQbzoKt.png"
+                                    class="block w-8 h-8"><span class="block my-1">38&deg;</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./script.js"></script>
-        <footer style="background-color: rgb(255, 253, 253)">
-            <div class="container p-4">
-                <div class="row">
-                    <h3 class="mb-3">© Crystal Leung 2022</h5>
-                </div>
-            </div>
-        </footer>
+    </div>
+    </div>
+    <div class="jumbotron">
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
