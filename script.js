@@ -1,3 +1,5 @@
+var city = $('#city').innerText
+
 // current date 
 var date = moment().format('MMMM Do YYYY');
 console.log(date);
