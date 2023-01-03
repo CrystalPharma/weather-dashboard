@@ -43,20 +43,21 @@ $.ajax({
     console.log(response);
 
     //response location
-    $("#city").text(response.main.name);
+    $("#city").text(response.name);
     //weather description
     $("#weather-description").text(response.weather[0].main);
     //temperature
     $("#temperature").text( (response.main.temp - 273.15).toFixed(0) + "℃" );
     //max min temperature
-    $("#maxMin").text((response.main.temp_max - 273.15).toFixed(0) + " / " + (response.main.temp_min - 273.15).toFixed(0));
-
+    $("#maxMin").text((response.main.temp_max - 273.15).toFixed(0) + " / " + (response.main.temp_min - 273.15).toFixed(0) + "℃" );
     //wind-speed
-    $("#wind-speed").text('Wind Speed: ' + response.wind.speed + "km/hr");
+    $("#wind-speed").text('☴ Wind Speed: ' + response.wind.speed + "km/hr");
     //humidity
-    $("#humidity").text('Humidity: ' + response.main.humidity + "%");
+    $("#humidity").text('⛆ Humidity: ' + response.main.humidity + "%");
     //
 
 
   });
 
+
+//storing src images with different ids

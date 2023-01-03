@@ -30,19 +30,24 @@
         <div class="row d-flex justify-content-center px-10">
             <div class="card" style="width: 48rem">
                 <div class="card text">
-                    <div class="card-header">
+                    <!-- <div class="card-header">
                         <div class="input-group rounded" style="width: 20rem; left: 28%;">
-                            <input type="search" class="form-control rounded" placeholder="City" aria-label="Search"
-                                aria-describedby="search-addon" />
+                            <input type="search" class="form-control rounded" placeholder="City Name" />
                             <span class="input-group-text" id="search-addon">
                                 <a><i class="fas fa-search"></i></a>
                             </span>
                         </div>
+                    </div> -->
+                    <div class="container ml-4 mb-4 mt-auto" style="padding-top: 1rem;">
+                        <div class="row form-group form-inline" id="formDiv">
+                            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+                            <button type="button" id="submitWeather" class="btn btn-outline-dark btn-md">Search</button>
+                        </div>
                     </div>
-                    <h3 class="ml-auto mr-4 mt-3 mb-0" id="city">London</h3>
+                    <h3 class="ml-auto mr-4 mt-3 mb-0" id="cityResult"></h3>
                     <p class="ml-auto mr-4 mb-0 med-font" id="weather-description"></p>
-                    <h1 class="ml-auto mr-4 large-font" id="temperature">14&#176;</h1>
-                    <p class="ml-auto mr-4 mb-0 med-font" id="maxMin">14/11</p>
+                    <h1 class="ml-auto mr-4 large-font" id="temperature"></h1>
+                    <p class="ml-auto mr-4 mb-0 med-font" id="maxMin"></p>
                     <h1 class="ml-4 display-4" id="weather-icon"><i class="wi wi-snowflake-cold"></i></h1>
                     <p class="time-font mb-0 ml-4 mt-auto" id="current-time"></p>
                     <p class="ml-4 mb-4" id="current-date"></p>

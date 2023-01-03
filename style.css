@@ -11,3 +11,8 @@ body, footer {
     background-color: transparent;
 }
 
+#formDiv {
+    margin: auto;
+    text-align: center;
+    width: 45%;
+}
