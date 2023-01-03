@@ -50,6 +50,9 @@ $.ajax({
     $("#temperature").text( (response.main.temp - 273.15).toFixed(0) + "℃" );
     //max min temperature
     $("#maxMin").text((response.main.temp_max - 273.15).toFixed(0) + " / " + (response.main.temp_min - 273.15).toFixed(0) + "℃" );
+    //weather icon
+    // var iconRef = "http://openweathermap.org/img/w/" +(response.weather[0].icon) + ".png";
+    // $('#weather-icon').attr('src',iconRef);
     //wind-speed
     $("#wind-speed").text('☴ Wind Speed: ' + response.wind.speed + "km/hr");
     //humidity
