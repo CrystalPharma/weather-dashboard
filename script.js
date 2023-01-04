@@ -44,7 +44,7 @@ $(document).ready(function () {
           $("#maxMin").text((data.main.temp_max - 273.15).toFixed(0) + " / " + (data.main.temp_min - 273.15).toFixed(0) + "℃");
           //weather icon
           $('#weather-icon').text(iconsrc);
-          var iconsrc = "<img src='http://openweathermap.org/img/w/' +(data.weather[0].icon) + '.png' />"
+          var iconsrc = "<img src='http://openweathermap.org/img/w/' + data.weather[0].icon + '.png'>"
           // var iconRef = "http://openweathermap.org/img/w/" +(data.weather[0].icon) + ".png";
           // $('#weather-icon').attr('src',iconRef);
           //wind-speed
