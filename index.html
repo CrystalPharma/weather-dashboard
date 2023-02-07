@@ -23,52 +23,73 @@
             <h1 class="display-4 text-center"><b>Weather Dashboard</b></h1>
         </div>
     </div>
+    <!-- <form>
+        <input type="text" id="city"/>
+        <button type="submit">Search</button>
+    </form> -->
     <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
         <div class="row d-flex justify-content-center px-10">
-            <div class="card" style="width: 48rem">
+            <div class="card" style="width: 60rem">
                 <div class="card text">
                     <div class="container ml-4 mb-4 mt-auto" style="padding-top: 1rem;">
                         <div class="row form-group form-inline" id="formDiv">
                             <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
-                            <button type="button" id="submitWeather" class="btn btn-dark btn-md items-center" style="opacity: 60%;">Search</button>
+                            <button type="button" id="submitWeather" class="btn btn-dark btn-md items-center"
+                                style="opacity: 60%;">Search</button>
                             <span id="error"></span>
                         </div>
                     </div>
-                    <h3 class="ml-auto mr-4 mt-3 mb-0" id="cityResult">City</h3>
-                    <p class="ml-auto mr-4 mb-0 med-font" id="weather-description">weather info</p>
-                    <h1 class="ml-auto mr-4 large-font" id="temperature">℃</h1>
+                    <h3 class="ml-auto mr-4 mt-3 mb-0" id="cityResult">Start searching for a City &#127750;</h3>
+                    <p class="ml-auto mr-4 mb-0 med-font" id="weather-description"></p>
+                    <h1 class="ml-auto mr-4 large-font" id="temperature"></h1>
                     <p class="ml-auto mr-4 mb-0 med-font" id="maxMin"></p>
-                    <h1 class="ml-4 display-4" id="weather-icon"><img src='http://openweathermap.org/img/w/04d.png' /></h1>
+                    <h1 class="ml-4 display-4" id="weather-icon"><img class="icon"
+                            src='http://openweathermap.org/img/wn/10d@2x.png'/>
+                    </h1>
                     <p class="time-font mb-0 ml-4 mt-auto" id="current-time"></p>
                     <p class="ml-4 mb-4" id="current-date"></p>
                     <h5 class="time-font mb-0 ml-4 mt-auto" id="wind-speed">☴ Wind Speed </i></h5>
                     <h5 class="time-font mb-0 ml-4 mt-auto" id="humidity">⛆ Humidity </h5>
-                    <div class="divider table mx-2 text-center bg-transparent whitespace-nowrap"><span
-                            class="inline-block px-3">Forecast</span></div>
+                    <div class="divider table mx-2 text-center bg-transparent whitespace-nowrap"><h3
+                            class="inline-block">Forecast</h3></div>
                     <div class="px-6 py-6 relative">
                         <div class="text-center justify-between items-center flex"
                             style="display: flex; justify-content: center;">
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"
-                                style="padding-right: 1rem;"><span class="block my-1">Sun</span><img
-                                    src="https://i.imgur.com/ffgW9JQ.png" class="block w-8 h-8"><span
-                                    class="block my-1">10&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"
-                                style="padding-right: 1rem;">
-                                <span class="block my-1">Mon</span><img src="https://i.imgur.com/BQbzoKt.png"
-                                    class="block w-8 h-8"><span class="block my-1">11&deg;</span>
-                            </div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"
-                                style="padding-right: 1rem;"><span class="block my-1">Tue</span><img
-                                    src="https://i.imgur.com/BQbzoKt.png" class="block w-8 h-8"><span
-                                    class="block my-1">8&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"
-                                style="padding-right: 1rem;"><span class="block my-1">Wed</span><img
-                                    src="https://i.imgur.com/ffgW9JQ.png" class="block w-8 h-8"><span
-                                    class="block my-1">10&deg;</span></div>
-                            <div class="text-center mb-0 flex items-center justify-center flex-col"
-                                style="padding-right: 1rem;"><span class="block my-1">Thurs</span><img
-                                    src="https://i.imgur.com/ffgW9JQ.png" class="block w-8 h-8"><span
-                                    class="block my-1">12&deg;</span></div>
+                                    <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2 rounded" >
+                                        <p id="fDate0"></p>
+                                        <p><img
+                                            src="http://openweathermap.org/img/wn/01n@2x.png" class="block w-8 h-8" id="fImg0"/></p>
+                                        <p><span id="fTemp0"></span></p>
+                                        <p><span id="fHumidity0"></span></p>
+                                    </div>
+                                    <div class="col-sm-2  forecast ml-2 mb-3 p-2 mt-2 rounded" >
+                                        <p id="fDate1"></p>
+                                        <p><img
+                                            src="http://openweathermap.org/img/wn/03n@2x.png" class="block w-8 h-8" id="fImg1"/></p>
+                                        <p><span id="fTemp1"></span></p>
+                                        <p><span id="fHumidity1"></span></p>
+                                    </div>
+                                    <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2 rounded">
+                                        <p id="fDate2"></p>
+                                        <p><img
+                                            src="http://openweathermap.org/img/wn/04n@2x.png" class="block w-8 h-8" id="fImg2"/></p>
+                                        <p><span id="fTemp2"></span></p>
+                                        <p><span id="fHumidity2"></span></p>
+                                    </div>
+                                    <div class="col-sm-2 forecast  ml-2 mb-3 p-2 mt-2">
+                                        <p id="fDate3"></p>
+                                        <p><img
+                                            src="http://openweathermap.org/img/wn/02n@2x.png" class="block w-8 h-8" id="fImg3"/></p>
+                                        <p><span id="fTemp3"></span></p>
+                                        <p><span id="fHumidity3"></span></p>
+                                    </div>
+                                    <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2 rounded" >
+                                        <p id="fDate4"></p>
+                                        <p><img
+                                            src="http://openweathermap.org/img/wn/03n@2x.png" class="block w-8 h-8" id="fImg4"/></p>
+                                        <p><span id="fTemp4"></span></p>
+                                        <p><span id="fHumidity4"></span></p>
+                                    </div>
                         </div>
                     </div>
                 </div>

@@ -7,6 +7,13 @@ body, footer {
     
 }
 
+#weather-icon > img {
+    width: 8rem;
+}
+
+.card img {
+    width: 3rem;
+}
 .jumbotron, .card{
     background-color: transparent;
 }
@@ -15,4 +22,16 @@ body, footer {
     margin: auto;
     text-align: center;
     width: 45%;
+}
+
+#current-date {
+    font-size: 1.5rem;
+}
+
+#hidden {
+    display: none;
+}
+
+#active {
+    display: flex;
 }
