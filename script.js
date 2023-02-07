@@ -59,7 +59,7 @@ $('#submitWeather').click(function () {
     for (let i = 0; i < 5; i++) {
       const date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
       const iconcode = list[i].weather[0].icon;
-      const tempK = list[i].main.temp;
+      const tempK = (list[i].main.temp).toFixed(0);
       const humidity = list[i].main.humidity;
       $("#fDate" + i).text(date);
       document.querySelector("#fImg" + i).src = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png";
