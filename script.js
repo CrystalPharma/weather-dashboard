@@ -55,7 +55,7 @@ $('#submitWeather').click(function () {
   }).then(function (response) {
     const list = response.list;
     console.log(list);
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       const date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
       const iconcode = list[i].weather[0].icon;
       const tempK = (list[i].main.temp).toFixed(0);
