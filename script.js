@@ -35,12 +35,10 @@ $(document).ready(function () {
           // $('#weather-icon').text(iconsrc);
           var iconsrc = data.weather[0].icon;
           document.querySelector('.icon').src = "https://openweathermap.org/img/wn/" + iconsrc + "@2x.png";
-          $("#wind-speed").text('☴ Wind Speed ' + data.wind.speed + "km/hr");
+          $("#wind-speed").text('☴ Wind Speed ' + data.wind.speed + "kph");
           //humidity
           $("#humidity").text('⛆ Humidity ' + data.main.humidity + "%");
-
         }
-
       });
     } else {
       $("#error").html('Please fill in a valid city')
@@ -56,16 +54,20 @@ $('#submitWeather').click(function () {
     method: "GET"
   }).then(function (response) {
     const list = response.list;
+    console.log(list);
     for (let i = 0; i < 5; i++) {
       const date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
       const iconcode = list[i].weather[0].icon;
       const tempK = (list[i].main.temp).toFixed(0);
       const humidity = list[i].main.humidity;
+      const windSpd = list[i].wind.speed;
       $("#fDate" + i).text(date);
       document.querySelector("#fImg" + i).src = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png";
       $("#fTemp" + i).text(tempK + "℃");
       $("#fHumidity" + i).text("Humidity " + humidity + "%");
+      $("#fWind" + i).text("Wind Speed " + windSpd +"kph");
+
     }
     forecast();
-  });
+  }); 
 })
