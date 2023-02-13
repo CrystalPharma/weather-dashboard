@@ -5,14 +5,6 @@ body {
     background-repeat: no-repeat;
 }
 
-footer {
-    background-color: transparent;
-}
-
-.display-4 {
-    background-color: transparent;
-}
-
 #weather-icon > img {
     width: 8rem;
 }
