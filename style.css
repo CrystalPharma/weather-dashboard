@@ -1,21 +1,36 @@
-body, footer {
-    background-image: linear-gradient(to top,
+body {
+    background: linear-gradient(to top,
             #BF8D7A 0%,
             #8090A6 100%) !important;
     background-repeat: no-repeat;
-    height: 100%;
-    
+}
+
+footer {
+    background-color: transparent;
+}
+
+.display-4 {
+    background-color: transparent;
 }
 
 #weather-icon > img {
     width: 8rem;
 }
 
+#search-input {
+	border-radius: 0.5em;
+	margin: 0.25em;
+	outline: none;
+}
 .card img {
-    width: 3rem;
+    width: 2rem;
 }
 .jumbotron, .card{
     background-color: transparent;
+}
+
+#main-card {
+    width: 60rem; margin-left: 1.5rem; margin-right: 0.8rem;
 }
 
 #formDiv {
@@ -24,8 +39,16 @@ body, footer {
     width: 38%;
 }
 
+#cityResult {
+    justify-content: center;
+}
+
 #current-date {
     font-size: 1.5rem;
+}
+
+#weather-icon {
+    padding-left: 10%;
 }
 
 #hidden {
