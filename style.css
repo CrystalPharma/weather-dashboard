@@ -17,6 +17,11 @@ footer {
     width: 8rem;
 }
 
+#formDiv {
+ justify-content: center;
+ margin-left: 1rem;
+}
+
 #search-input {
 	border-radius: 0.5em;
 	margin: 0.25em;
@@ -30,7 +35,9 @@ footer {
 }
 
 #main-card {
-    width: 60rem; margin-left: 1.5rem; margin-right: 0.8rem;
+    width: 60rem;
+    margin-left: 1.5rem; 
+    margin-right: 0.8rem;
 }
 
 #formDiv {
@@ -47,9 +54,9 @@ footer {
     font-size: 1.5rem;
 }
 
-#weather-icon {
-    padding-left: 10%;
-}
+/* #weather-icon {
+ 
+} */
 
 #hidden {
     display: none;
