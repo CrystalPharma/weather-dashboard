@@ -2,8 +2,7 @@ var description = $('#weather-description').text();
 var temperature = $('#temperature').text();
 var maxMin = $('#maxMin').text();
 var weatherIcon = $('#weather-icon').text();
-var searchInput = document.getElementById('city');
-
+const cityBtn =$('#citybuttons');
 // current date 
 var date = moment().format('MMMM Do YYYY');
 $('#current-date').text(date);
@@ -28,16 +27,19 @@ $(document).ready(function () {
           //weather description
           $("#weather-description").text(data.weather[0].main);
           //temperature
-          $("#temperature").text((data.main.temp - 273.15).toFixed(0) + "℃");
+          $("#temperature").text((data.main.temp - 273.15).toFixed(1) + "℃");
           //max min temperature
           $("#maxMin").text((data.main.temp_max - 273.15).toFixed(0) + " / " + (data.main.temp_min - 273.15).toFixed(0) + "℃");
           //weather icon
           // $('#weather-icon').text(iconsrc);
           var iconsrc = data.weather[0].icon;
           document.querySelector('.icon').src = "https://openweathermap.org/img/wn/" + iconsrc + "@2x.png";
-          $("#wind-speed").text('☴ Wind Speed ' + data.wind.speed + "kph");
+          $("#wind-speed").text('☴ Wind Speed ' + ((data.wind.speed)*3.6).toFixed(2) + "kph");
           //humidity
           $("#humidity").text('⛆ Humidity ' + data.main.humidity + "%");
+            
+          localStorage.setItem('cities', data.name);
+          document.createElement('button', )
         }
       });
     } else {
@@ -58,9 +60,9 @@ $('#submitWeather').click(function () {
     for (let i = 0; i < 5; i++) {
       const date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
       const iconcode = list[i].weather[0].icon;
-      const tempK = (list[i].main.temp).toFixed(0);
+      const tempK = (list[i].main.temp).toFixed(1);
       const humidity = list[i].main.humidity;
-      const windSpd = list[i].wind.speed;
+      const windSpd = ((list[i].wind.speed)*3.6).toFixed(2);
       $("#fDate" + i).text(date);
       document.querySelector("#fImg" + i).src = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png";
       $("#fTemp" + i).text(tempK + "℃");
