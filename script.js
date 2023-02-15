@@ -2,7 +2,7 @@ var description = $('#weather-description').text();
 var temperature = $('#temperature').text();
 var maxMin = $('#maxMin').text();
 var weatherIcon = $('#weather-icon').text();
-const cityBtn =$('#citybuttons');
+const cityBtn = $('#citybuttons');
 // current date 
 var date = moment().format('MMMM Do YYYY');
 $('#current-date').text(date);
@@ -34,12 +34,14 @@ $(document).ready(function () {
           // $('#weather-icon').text(iconsrc);
           var iconsrc = data.weather[0].icon;
           document.querySelector('.icon').src = "https://openweathermap.org/img/wn/" + iconsrc + "@2x.png";
-          $("#wind-speed").text('☴ Wind Speed ' + ((data.wind.speed)*3.6).toFixed(2) + "kph");
+          $("#wind-speed").text('☴ Wind Speed ' + ((data.wind.speed) * 3.6).toFixed(2) + "kph");
           //humidity
           $("#humidity").text('⛆ Humidity ' + data.main.humidity + "%");
-            
-          localStorage.setItem('cities', data.name);
-          document.createElement('button', )
+
+          localStorage.setItem('cities', JSON.stringify(city));
+          // var prev_data = JSON.parse(localStorage.getItem('cities'));
+          // prev_data.push(city);
+          // localStorage.setItem('data', JSON.stringify(prev_data));
         }
       });
     } else {
@@ -56,20 +58,39 @@ $('#submitWeather').click(function () {
     method: "GET"
   }).then(function (response) {
     const list = response.list;
-    console.log(list);
+    // console.log(list);
     for (let i = 0; i < 5; i++) {
       const date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
       const iconcode = list[i].weather[0].icon;
       const tempK = (list[i].main.temp).toFixed(1);
       const humidity = list[i].main.humidity;
-      const windSpd = ((list[i].wind.speed)*3.6).toFixed(2);
+      const windSpd = ((list[i].wind.speed) * 3.6).toFixed(2);
       $("#fDate" + i).text(date);
       document.querySelector("#fImg" + i).src = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png";
       $("#fTemp" + i).text(tempK + "℃");
       $("#fHumidity" + i).text("Humidity " + humidity + "%");
-      $("#fWind" + i).text("Wind Speed " + windSpd +"kph");
-
+      $("#fWind" + i).text("Wind Speed " + windSpd + "kph");
     }
-    forecast();
-  }); 
+
+    console.log(list)
+  });
 })
+
+
+// $('#submitWeather').click(function searchHx() {
+//   // alert('searched for city!');
+
+//   var new_data = $('#city').val();
+
+//   localStorage.setItem('cities', new_data);
+//   var prev_data = JSON.parse(localStorage.getItem('cities'));
+//   prev_data.push(new_data);
+
+//   localStorage.setItem('data', JSON.stringify(prev_data));
+// });
+
+// function clear() {
+//   localStorage.clear();
+// }
+
+// localStorage.setItem('cities', data.name);

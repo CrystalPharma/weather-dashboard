@@ -32,14 +32,14 @@
                         <div class="row form-group form-inline text-center" id="formDiv">
                             <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
                             <button type="button" id="submitWeather" class="btn btn-dark btn-md items-center"
-                                style="opacity: 60%;">Search</button>
+                                style="opacity: 60%;" >Search</button>
                             <span id="error"></span>
                         </div>
                     </div>
                     <div class="card-main container">
                         <div class="row">
                             <div class="col">
-                                <h3 class="ml-4 mt-3 mb-0" id="cityResult">Search for a City &#127750;</h3>
+                                <h3 class="ml-4 mt-3 mb-0" id="cityResult">Search for a City</h3>
                                 <p class="ml-4 mb-0 med-font" id="weather-description"></p>
                                 <h1 class="ml-4 large-font" id="temperature"></h1>
                                 <p class="ml-4 mb-0 med-font" id="maxMin"></p>
@@ -60,7 +60,7 @@
                                         <button class="btn btn-secondary mb-2">Zurich</button>
                                         <button class="btn btn-secondary mb-2">Monach</button>
                                         <button class="btn btn-secondary mb-2">Kyoto</button> -->
-                                        <button class="btn btn-outline-dark mb-2">Clear</button>
+                                        <button onclick="clear()" class="btn btn-outline-dark mb-2" >Clear</button>
                                     </div>                                    
                                 </div>
                             </div>
