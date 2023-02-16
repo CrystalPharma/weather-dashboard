@@ -9,6 +9,7 @@ $('#current-date').text(date);
 
 // city variable target on input form
 var city = $('#city').val();
+let history = []
 
 // API key
 var APIKey = "cbb0a4faea3b1ca0270bcb088ec725e8";
@@ -16,6 +17,7 @@ var APIKey = "cbb0a4faea3b1ca0270bcb088ec725e8";
 $(document).ready(function () {
   $('#submitWeather').click(function () {
     var city = $('#city').val();
+    history.push(city);
     if (city != '') {
       $.ajax({
         url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "&appid=" + APIKey,
@@ -37,11 +39,10 @@ $(document).ready(function () {
           $("#wind-speed").text('☴ Wind Speed ' + ((data.wind.speed) * 3.6).toFixed(2) + "kph");
           //humidity
           $("#humidity").text('⛆ Humidity ' + data.main.humidity + "%");
-
-          localStorage.setItem('cities', JSON.stringify(city));
-          // var prev_data = JSON.parse(localStorage.getItem('cities'));
-          // prev_data.push(city);
-          // localStorage.setItem('data', JSON.stringify(prev_data));
+          //var prev_data = JSON.parse(localStorage.getItem('cities')) || [];
+          // localStorage.setItem('cities', JSON.stringify(city));
+          localStorage.setItem('data', JSON.stringify(history));
+         gethistory()
         }
       });
     } else {
@@ -59,7 +60,7 @@ $('#submitWeather').click(function () {
   }).then(function (response) {
     const list = response.list;
     // console.log(list);
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i <= 4; i++) {
       const date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
       const iconcode = list[i].weather[0].icon;
       const tempK = (list[i].main.temp).toFixed(1);
@@ -76,21 +77,19 @@ $('#submitWeather').click(function () {
   });
 })
 
+function gethistory() {
+  // var lastIndex = historyArr.length - 1;
+  // var btn = $("<button></button>").text(historyArr[lastIndex])
+  // $('#citybuttons').append(btn);
+  var historyArr = JSON.parse(localStorage.getItem("data"));
+    var lastIndex = historyArr.length - 1;
+    var btn = $("<button></button>").text(historyArr[lastIndex])
+    $('#citybuttons').append(btn);
+}
 
-// $('#submitWeather').click(function searchHx() {
-//   // alert('searched for city!');
+localStorage.getItem('data')
 
-//   var new_data = $('#city').val();
-
-//   localStorage.setItem('cities', new_data);
-//   var prev_data = JSON.parse(localStorage.getItem('cities'));
-//   prev_data.push(new_data);
-
-//   localStorage.setItem('data', JSON.stringify(prev_data));
-// });
-
-// function clear() {
-//   localStorage.clear();
-// }
-
-// localStorage.setItem('cities', data.name);
+function clearhistory() {
+  localStorage.clear();
+  $('#citybuttons').html(""); 
+}
